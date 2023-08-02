@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'Categories',
+    'django_tgbot',
+    'niyati2102bot',
 ]
 
 MIDDLEWARE = [
