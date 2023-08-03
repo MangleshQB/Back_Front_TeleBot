@@ -1,5 +1,8 @@
+from django.db.models import Q
 from django.http import JsonResponse
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import ListView
 from rest_framework.viewsets import ModelViewSet
 from .serializer import *
 from .models import *
@@ -28,3 +31,27 @@ def Product(request):
     return JsonResponse({'Products': queryset})
 
     permission_classes = [AllowAny]
+
+
+def Home(request):
+    ctx = {}
+    queryset = category.objects.all()
+    ctx['data'] = queryset
+    # print(ctx)
+    return render(request, 'categories.html', ctx)
+
+def Products(request, id):
+    ctx = {}
+    product = products.objects.filter(category=id)
+    ctx['data'] = product
+    # ctx['category'] = "Jeans"
+    ctx['category'] = category.objects.get(id=id)
+    # print(ctx)
+    return render(request, 'products.html', ctx)
+
+
+# def Products(request):
+#     product = products.objects.get(id=category.id)
+#     context = {'products': product}
+#     print(product)
+#     return render(request, 'products.html', context)

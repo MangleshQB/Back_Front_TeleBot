@@ -1,3 +1,4 @@
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -13,8 +14,7 @@ SECRET_KEY = 'django-insecure-#z9fni6kln#2mnp2=w7kpwlz5wasd3*@o*5-kk%t7)js1ib!o5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*', 'https://3ee1-2405-201-2002-1f6-88c8-a9f-81f5-9428.ngrok-free.app']
 
 # Application definition
 
@@ -29,8 +29,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'Categories',
-    'django_tgbot',
-    'niyati2102bot',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +47,7 @@ ROOT_URLCONF = 'Main_File.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +120,18 @@ AUTH_USER_MODEL = 'Custom_User.CustomUser'
 TEMPLATE_LOADERS = (
     'django.template.loaders.eggs.Loader',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=25),
+}
+
+STATICFILES_DIRS = [
+    BASE_DIR/'static'
+]
