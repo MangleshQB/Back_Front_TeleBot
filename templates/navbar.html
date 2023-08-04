@@ -3,9 +3,6 @@
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="http://127.0.0.1:8000/"><img class="mx-auto d-block rounded" src="{% static 'img/qb1.png' %}" class="d-block w-20" height="50"></a>
-<!--            <img src="" class="d-block w-100" height="500" alt="...">-->
-<!--          <img src="{% static 'img/qua.png' %}" alt="My image" class="d-block w-10" height="70">-->
-
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -17,7 +14,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   {% for category in data %}
-                  <li><a class="dropdown-item" href="#">{{ category.name }}</a></li>
+                  <li><a class="dropdown-item" href="product/{{category.id}}">{{ category.name }}</a></li>
                    {% endfor %}
                 </ul>
               </li>
@@ -36,8 +33,9 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2" style="border: 1px solid gray" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:40px; color:#0d52c9"></i>
             </form>
           </div>
         </div>

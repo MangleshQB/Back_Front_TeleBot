@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('', Home, name='Home'),
     path('product/<int:id>', Products, name='Product'),
+    path('product/product_details/<int:id>', Product_Details, name='Product'),
     # path('prod/', Products, name='Product')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

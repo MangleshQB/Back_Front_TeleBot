@@ -1,0 +1,158 @@
+{%include 'navbar.html'%}
+{% load static %}
+{% block content %}
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/temp.css' %}">
+<br><br>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://imagescdn.planetfashion.in/img/app/product/7/795640-9350615.jpg?auto=format&w=494.40000000000003" class="d-block w-100" height="800" alt="Image">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://imagescdn.planetfashion.in/img/app/product/7/795640-9350615.jpg?auto=format&w=494.40000000000003" class="d-block w-100" height="800" alt="Image">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://imagescdn.planetfashion.in/img/app/product/7/795640-9350615.jpg?auto=format&w=494.40000000000003" class="d-block w-100" height="800" alt="Image">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          {%for products in data%}
+          <div class="col" style="margin-left: 15px;">
+            <div class="col"><h1>{{products.brand.name}}</h1></div>
+            <div class="col">{{products.name}}</div>
+            <hr style="color: 2px lightgray;">
+            <div class="row">
+              <div class="col" ><h3><b>₹ {{products.price}}</b></h3></div>
+              <div class="col"><span>MRP <s>₹4000</s></span></div>
+              <div class="col" style="color: #146C94;"><h6>(50% OFF)</h6></div>
+              <div class="col"></div>
+              <div class="col"></div>
+            </div>
+            {%endfor%}
+            <span style="color: green;">Inclusive of all taxes</span>
+            <br><br>
+            <div class="col">
+                <div class="row">
+                    <h6 style="color: #19A7CE"><i>SELECT SIZE</i></h6>
+                    <div class="col">
+                        <button type="button" class="circle" style="background-color: #FAF9F6;">XS</button>
+                        <button type="button" class="circle" style="background-color: #FAF9F6;">S</button>
+                        <button type="button" class="circle" style="background-color: #FAF9F6;">M</button>
+                        <button type="button" class="circle" style="background-color: #FAF9F6;">L</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col">
+                <button type="button" class="btn btn-primary" style="padding: 13px 25px 9px 25px; background-color: #ff3e6c; border: 1px solid #ff3e6c"><h5>ADD TO CART</h5></button>
+            </div>
+            <hr style="color: 2px lightgray;">
+
+            <h6><b>DELIVERY OPTIONS</b></h6>
+            <p style="display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;">
+              <li style="list-style: none;">100% Original Products</li>
+              <li style="list-style: none;">Pay on delivery might be available</li>
+              <li style="list-style: none;">Easy 14 days returns and exchanges</li>
+              <li style="list-style: none;">Try & Buy might be available</li>
+            </p>
+
+            <h6><b>PRODUCT DETAILS</b></h6>
+            <p style="display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;">
+              <li style="list-style: none;">Medium shade, light fade blue jeans</li>
+              <li style="list-style: none;">Slim fit, mid-rise</li>
+              <li style="list-style: none;">Mildly distressed</li>
+              <li style="list-style: none;">Stretchable</li>
+              <li style="list-style: none;">3 pocket</li>
+              <li style="list-style: none;">Length: regular</li>
+            </p>
+
+            <h6><b>Size & Fit</b></h6>
+            <p style="display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;">
+              <li style="list-style: none;">Fit: Slim Fit</li>
+              <li style="list-style: none;">Non Stretchable</li>
+              <li style="list-style: none;">The model (height 6') is wearing a size 32</li>
+              <li style="list-style: none;">Stretchable</li>
+            </p>
+
+            <h6><b>Material & Care</b></h6>
+            <p>
+              <li style="list-style: none;">Cotton</li>
+              <li style="list-style: none;">Machine wash</li>
+            </p>
+
+            <h6><b>Specifications</b></h6>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <sub>Distress</sub>
+                  <p>Mildly Distressed</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+                <div class="col">
+                  <sub>Waist Rise</sub>
+                  <p>Mid-Rise</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <sub>Fade</sub>
+                  <p>Light Fade</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+                <div class="col">
+                  <sub>Shade</sub>
+                  <p>Shade</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <sub>Fit</sub>
+                  <p>Slim Fit</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+                <div class="col">
+                  <sub>Length</sub>
+                  <p>Regular</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <sub>Waistband</sub>
+                  <p>With belt loops</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+                <div class="col">
+                  <sub>Stretch</sub>
+                  <p>Stretchable</p>
+                  <hr style="color: 2px lightgray;">
+                </div>
+              </div>
+            </div>
+            <br>
+            <p>Product Code: <b>15313744</b></p>
+            <br>
+          </div>
+        </div>
+      </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+{%include 'footer.html'%}
+{%endblock%}
+
+

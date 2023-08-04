@@ -44,14 +44,20 @@ def Products(request, id):
     ctx = {}
     product = products.objects.filter(category=id)
     ctx['data'] = product
+    print(ctx)
     # ctx['category'] = "Jeans"
     ctx['category'] = category.objects.get(id=id)
     # print(ctx)
     return render(request, 'products.html', ctx)
+    return render(request, 'navbar.html', ctx)
 
-
-# def Products(request):
-#     product = products.objects.get(id=category.id)
-#     context = {'products': product}
-#     print(product)
-#     return render(request, 'products.html', context)
+def Product_Details(request, id):
+    ctx = {}
+    product = products.objects.filter(id=id)
+    ctx['data'] = product
+    # print(ctx)
+    ctx['category'] = category.objects.get(id=id)
+    # ctx['category'] = "Jeans"
+    # ctx['category'] = category.objects.get(id=id)
+    # return JsonResponse({'data': 'ctx'})
+    return render(request, 'product_details.html', ctx)

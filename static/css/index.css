@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: #F2EFE9;
+    background-color: #FAF9F6;
     margin-bottom: 160px;
 
 }
@@ -84,3 +84,13 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.circle {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font: 18px Arial, sans-serif;
+   }
