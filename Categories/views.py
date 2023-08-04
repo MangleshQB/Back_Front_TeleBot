@@ -56,7 +56,7 @@ def Product_Details(request, id):
     product = products.objects.filter(id=id)
     ctx['data'] = product
     # print(ctx)
-    ctx['category'] = category.objects.get(id=id)
+    # ctx['category'] = category.objects.get(id=id)
     # ctx['category'] = "Jeans"
     # ctx['category'] = category.objects.get(id=id)
     # return JsonResponse({'data': 'ctx'})
