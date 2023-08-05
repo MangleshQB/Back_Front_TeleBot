@@ -8,6 +8,14 @@ class category(models.Model):
     def __str__(self):
         return self.name
 
+    # @staticmethod
+    # def get_all_categories():
+    #     return category.objects.all()
+    #
+    # def __str__(self):
+    #     return self.name
+
+
 class Brand(models.Model):
     name = models.CharField(max_length=250)
 
@@ -25,3 +33,18 @@ class products(models.Model):
 
     def __str__(self):
         return self.name
+
+    # @staticmethod
+    # def get_products_by_id(ids):
+    #     return products.objects.filter(id__in=ids)
+    #
+    # @staticmethod
+    # def get_all_products():
+    #     return products.objects.all()
+    #
+    # @staticmethod
+    # def get_all_products_by_categoryid(category_id):
+    #     if category_id:
+    #         return products.objects.filter(category=category_id)
+    #     else:
+    #         return products.get_all_products();

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import View
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
@@ -38,6 +39,3 @@ def Login(request):
         {"errors": "Invalid credentials"},
         status=400,
     )
-from django.shortcuts import render
-
-# Create your views here.

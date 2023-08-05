@@ -35,7 +35,6 @@ urlpatterns = [
     path('', Home, name='Home'),
     path('product/<int:id>', Products, name='Product'),
     path('product/product_details/<int:id>', Product_Details, name='Product'),
-    # path('prod/', Products, name='Product')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
